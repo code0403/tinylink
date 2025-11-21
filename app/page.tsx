@@ -27,7 +27,7 @@ export default function Dashnboard() {
   // Search State 
   const [searchQuery, setSearchQuery] = useState("");
 
-  // const BASE_URL = window.location.origin;
+  const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
   // Fetch all links
   async function fetchLinks() {
@@ -39,7 +39,7 @@ export default function Dashnboard() {
   }
 
   useEffect(() => {
-    const BASE_URL = window.location.origin;
+    // const BASE_URL = window.location.origin;
     fetchLinks();
   }, []);
 
@@ -107,7 +107,7 @@ export default function Dashnboard() {
   }
 
   const handleCopy = async (code: string) => {
-    const url = `${window.location.origin}/${code}`;
+    const url = `${process.env.NEXT_PUBLIC_BASE_URL}/${code}`;
 
     try {
       await navigator.clipboard.writeText(url);
