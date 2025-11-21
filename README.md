@@ -218,6 +218,7 @@ Get a single link with analytics.
 Delete a link.
 
 ### **GET /api/healthz**
+e.g. http://localhost:3000/api/healthz
 
 System health and uptime.
 
