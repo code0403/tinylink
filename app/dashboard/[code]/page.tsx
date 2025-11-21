@@ -1,6 +1,5 @@
-
 import { prisma } from "@/lib/prisma";
-import Link from "next/dist/client/link";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 export default async function LinkAnalyticsPage({params,}: { params: { code: string }; }) {

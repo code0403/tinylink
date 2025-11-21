@@ -3,14 +3,18 @@
 import { useState, useEffect } from "react";
 
 export default function useMediaQuery(query) {
-  const [matches, setMatches] = useState(window.matchMedia(query).matches);
+  const [matches, setMatches] = useState(false); // SSR-safe default
 
   useEffect(() => {
-    const media = window.matchMedia(query);
-    const listener = () => setMatches(media.matches);
+    if (typeof window === "undefined") return; // extra SSR safety
 
-    media.addListener(listener);
-    return () => media.removeListener(listener);
+    const media = window.matchMedia(query);
+    setMatches(media.matches);
+
+    const listener = () => setMatches(media.matches);
+    media.addEventListener("change", listener);
+
+    return () => media.removeEventListener("change", listener);
   }, [query]);
 
   return matches;

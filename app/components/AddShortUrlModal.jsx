@@ -1,4 +1,4 @@
-import React from "react";
+'use client';
 
 export default function AddShortUrlModal({ open, onClose, children }) {
   if (!open) return null;
