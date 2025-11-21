@@ -6,6 +6,12 @@ It supports custom short codes, URL validation, redirects with click-tracking, a
 
 This project is built as part of a backend assignment and follows production-style architecture, API conventions, and database design.
 
+🚀 Live Demo
+
+🔗 Deployed App: https://tinylink-pink.vercel.app
+
+💻 Local Dev: http://localhost:3000
+
 ## 🚀 Features
 
 ### 🔗 **Short Link Creation**
@@ -104,6 +110,38 @@ This project is built as part of a backend assignment and follows production-sty
 </span></span></code></div></div></pre>
 
 ---
+
+⚙️ Environment Variables
+
+Create .env:
+
+DATABASE_URL="your_postgres_connection_url"
+NEXT_PUBLIC_BASE_URL="http://localhost:3000"
+
+
+When deployed on Vercel:
+
+NEXT_PUBLIC_BASE_URL="https://tinylink-pink.vercel.app"
+
+▶️ Running Locally
+git clone https://github.com/yourusername/tinylink.git
+cd tinylink
+
+npm install
+npx prisma generate
+npm run dev
+
+App runs on → http://localhost:3000
+
+🗄️ Prisma Commands
+Create database migrations
+npx prisma migrate dev
+
+Push schema without migration (not recommended for prod)
+npx prisma db push
+
+Deploy migrations (production)
+npx prisma migrate deploy
 
 ## 🗄️ Database Schema (Prisma)
 
@@ -225,3 +263,8 @@ System health and uptime.
 ### **GET /[code]**
 
 Redirect handler.
+
+
+License
+
+This project is open-source. Use it freely.
