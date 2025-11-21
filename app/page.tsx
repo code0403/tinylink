@@ -27,7 +27,7 @@ export default function Dashnboard() {
   // Search State 
   const [searchQuery, setSearchQuery] = useState("");
 
-  const BASE_URL = window.location.origin;
+  // const BASE_URL = window.location.origin;
 
   // Fetch all links
   async function fetchLinks() {
@@ -39,6 +39,7 @@ export default function Dashnboard() {
   }
 
   useEffect(() => {
+    const BASE_URL = window.location.origin;
     fetchLinks();
   }, []);
 
