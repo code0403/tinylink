@@ -111,19 +111,18 @@ This project is built as part of a backend assignment and follows production-sty
 
 ---
 
-⚙️ Environment Variables
+### ⚙️ Environment Variables
 
-Create .env:
-
+#### Create .env:
 DATABASE_URL="your_postgres_connection_url"
 NEXT_PUBLIC_BASE_URL="http://localhost:3000"
 
 
-When deployed on Vercel:
+### When deployed on Vercel:
 
 NEXT_PUBLIC_BASE_URL="https://tinylink-pink.vercel.app"
 
-▶️ Running Locally
+## ▶️ Running Locally
 git clone https://github.com/yourusername/tinylink.git
 cd tinylink
 
@@ -133,7 +132,7 @@ npm run dev
 
 App runs on → http://localhost:3000
 
-🗄️ Prisma Commands
+## 🗄️ Prisma Commands
 Create database migrations
 npx prisma migrate dev
 
